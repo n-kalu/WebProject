@@ -1,16 +1,38 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* WEB FONT RESOURCES*/
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('./Assets/Fonts/Roboto-Light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-.header{
-    background:yellow;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+@font-face {
+    font-family: 'robotothin';
+    src: url('./Assets/Fonts/Roboto-Thin-webfont.woff') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
+
 }
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./Assets/Fonts/Roboto-Regular-webfont.woff') format('woff');   
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('./Assets/Fonts/Roboto-Medium-webfont.woff') format('woff');  
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* ************************************************************************************************************************************* */
+
 
 /* ATTRIBUTE AUTHORS OF FREE DOWNLOADED CONTENT */
 
@@ -18,55 +40,84 @@ body{
     display:none;
 }
 
-/* ************************************************ */
+/* ************************************************************************************************************************************* */
 
+body{
+    margin: 0;
+    padding: 0;
+    font-family: roboto, Arial, Helvetica, sans-serif;
+}
+
+.header{
+    /* background:yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+    padding:2rem 3rem;
+}
 
 .logo{
-   background: pink;
+   /* background: pink; */
+   flex-grow: 1;
 }
 
 .logo img{
     width: 10rem;
+    padding-right: 2vw;    
 }
 
 .menu{
-   background:lightgreen;
-   width: 45rem;
+   /* background:lightgreen; */
+   margin-right: 3vw;
+  
 }
+
 .menu ul{
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    margin: 0;
     padding: 0;
+    width: 55rem;
+    height: 50px; 
+    align-items: center;
+    /* background:red; */
 }
 
 .menu ul li{
-   font-size: 1.5rem;
-}
-
-.menu ul li:hover{
-    background: pink;
+    /* padding: 5px; */
 }
 
 .menu ul li a{
     text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-family:robotolight;
+    font-weight: bold; 
+    padding: 5px;
+    /* background:blue; */
 }
 
-.searchbox{
-    background:brown;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 15rem; */
+.menu ul li a:hover{
+    background: rgb(226, 226, 226);
+    border-radius: 5px;
+    color: rgb(95, 2, 75);
+}
+
+.searchbox{  
+    width: 13rem;
+    /* background:brown; */
 }
 
 .searchbox input{
-    height: 1.5rem;
+    height: 1.7rem;
+    /* border-radius: 2px; */
 }
 
 .searchbox img{
     width: 1rem;
+    margin-left: 0.05rem;
+    
 }
