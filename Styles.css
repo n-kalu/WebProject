@@ -1,4 +1,4 @@
-/* WEB FONT RESOURCES*/
+/*** WEB FONT RESOURCES ***/
 
 @font-face {
     font-family: 'robotolight';
@@ -31,16 +31,16 @@
     font-style: normal;
 
 }
-/* ************************************************************************************************************************************* */
+/***************************************************************************************************************************************/
 
 
-/* ATTRIBUTE AUTHORS OF FREE DOWNLOADED CONTENT */
+/*** ATTRIBUTE AUTHORS OF FREE DOWNLOADED CONTENT ***/
 
 .downloaded{
     display:none;
 }
 
-/* ************************************************************************************************************************************* */
+/***************************************************************************************************************************************/
 
 body{
     margin: 0;
@@ -70,6 +70,7 @@ body{
 .menu{
    /* background:lightgreen; */
    margin-right: 3vw;
+   flex-grow: 0.5;
   
 }
 
@@ -86,10 +87,6 @@ body{
     /* background:red; */
 }
 
-.menu ul li{
-    /* padding: 5px; */
-}
-
 .menu ul li a{
     text-decoration: none;
     color: black;
@@ -101,23 +98,55 @@ body{
 }
 
 .menu ul li a:hover{
-    background: rgb(226, 226, 226);
+    background: #e2e2e2;
     border-radius: 5px;
-    color: rgb(95, 2, 75);
+    color: #5f024b;
 }
-
+/* ************************************************ */
 .searchbox{  
-    width: 13rem;
     /* background:brown; */
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 0 0.2rem;
+    opacity: 0.9;
 }
 
-.searchbox input{
-    height: 1.7rem;
-    /* border-radius: 2px; */
+.searchbox form{
+    display: flex;
+    align-items: center;
+   
 }
 
-.searchbox img{
-    width: 1rem;
-    margin-left: 0.05rem;
-    
+.searchbox form input{
+    font-family: robotolight;
+    font-size: 1rem;
+    width: 10rem;
+    height: 1.5rem;
+    border-color: transparent;
+    padding-right: 0.7rem;
+} 
+
+.searchbox form input:focus{
+   border-right-color: #000000;
+   opacity: 0.7;
+   outline: none;
+}
+
+.searchbox form button{
+    width: 1.5rem;
+    height: 2rem;
+    text-indent: -1000px;
+    overflow: hidden;
+    background: no-repeat url("./Assets/Images/search.png");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 1.3rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    border-color: transparent;
+    /* background-color:pink; */
+}
+
+.searchbox form button:hover{
+    opacity: 0.5;
 }
