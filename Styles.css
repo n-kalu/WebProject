@@ -1,4 +1,4 @@
-/*** WEB FONT RESOURCES ***/
+/* Web Font Resources */
 
 @font-face {
     font-family: 'robotolight';
@@ -7,7 +7,6 @@
     font-style: normal;
 
 }
-
 @font-face {
     font-family: 'robotothin';
     src: url('./Assets/Fonts/Roboto-Thin-webfont.woff') format('woff'); 
@@ -15,7 +14,6 @@
     font-style: normal;
 
 }
-
 @font-face {
     font-family: 'robotoregular';
     src: url('./Assets/Fonts/Roboto-Regular-webfont.woff') format('woff');   
@@ -23,7 +21,6 @@
     font-style: normal;
 
 }
-
 @font-face {
     font-family: 'robotomedium';
     src: url('./Assets/Fonts/Roboto-Medium-webfont.woff') format('woff');  
@@ -31,23 +28,29 @@
     font-style: normal;
 
 }
-/***************************************************************************************************************************************/
 
 
-/*** ATTRIBUTE AUTHORS OF FREE DOWNLOADED CONTENT ***/
 
+
+/* Attribute Authors Of Free Downloaded Content */
 .downloaded{
     display:none;
 }
 
-/***************************************************************************************************************************************/
 
+
+
+/* Default Page Settings */
 body{
     margin: 0;
     padding: 0;
     font-family: roboto, Arial, Helvetica, sans-serif;
 }
 
+
+
+
+/* General Header Styles */
 .header{
     /* background:yellow; */
     display: flex;
@@ -57,23 +60,51 @@ body{
     padding:2rem 3rem;
 }
 
+
+
+
+/* Logo Styles */
 .logo{
-   /* background: pink; */
    flex-grow: 1;
+   position: relative;
+   width: 10rem;
+   height: 3.5rem;
+   padding-right: 2vw;  
 }
-
-.logo img{
+.subLogo{
+    width: inherit;
+   
+}
+.logo a img {
     width: 10rem;
-    padding-right: 2vw;    
+    padding-right: 2vw;   
+}
+.logoHoverImg {
+   display: inline-block;
+   width: 10rem;
+   padding-right: 2vw;
+   position:absolute;
+   top: 0;
+   left: 0;
+   z-index: 200;  
+   opacity: 0; 
+   transition: opacity 0.2s;
+  
+}
+.subLogo:hover .logoHoverImg {
+    opacity: 1;
 }
 
+
+
+
+/* Menu Styles */
 .menu{
    /* background:lightgreen; */
    margin-right: 3vw;
    flex-grow: 0.5;
   
 }
-
 .menu ul{
     list-style: none;
     display: flex;
@@ -86,7 +117,6 @@ body{
     align-items: center;
     /* background:red; */
 }
-
 .menu ul li a{
     text-decoration: none;
     color: black;
@@ -94,29 +124,33 @@ body{
     font-family:robotolight;
     font-weight: bold; 
     padding: 5px;
-    /* background:blue; */
+    transition: background-color 0.2s;
+    border-radius: 5px;
 }
-
 .menu ul li a:hover{
-    background: #e2e2e2;
+    background-color: #ececec;
     border-radius: 5px;
     color: #5f024b;
-}
-/* ************************************************ */
-.searchbox{  
-    /* background:brown; */
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    padding: 0 0.2rem;
-    opacity: 0.9;
+    box-shadow:0 0 1px 0.5px #ececec;
 }
 
+
+
+
+/* Search Box Styles */
+.searchbox{  
+    /* background:brown; */
+    border: 1.9px solid #cccccc;
+    box-shadow: 0 0 4px 0.4px #cccccc;
+    border-radius: 0.5rem;
+    padding: 0 0.2rem;
+    opacity: 0.8;
+}
 .searchbox form{
     display: flex;
     align-items: center;
    
 }
-
 .searchbox form input{
     font-family: robotolight;
     font-size: 1rem;
@@ -125,13 +159,11 @@ body{
     border-color: transparent;
     padding-right: 0.7rem;
 } 
-
 .searchbox form input:focus{
    border-right-color: #000000;
    opacity: 0.7;
    outline: none;
 }
-
 .searchbox form button{
     width: 1.5rem;
     height: 2rem;
@@ -144,9 +176,126 @@ body{
     cursor: pointer;
     margin-left: 0.5rem;
     border-color: transparent;
+    transition: opacity 0.2s;
     /* background-color:pink; */
 }
-
 .searchbox form button:hover{
     opacity: 0.5;
+   
 }
+
+
+
+/* Slide Show Styles*/
+.slideShow{
+    position: relative;
+    height:80vh;  
+}
+.ssImgContent img{
+    width:100%;
+    height:80vh;
+    object-fit:cover;
+    /* box-shadow: 0 0 20px 10px #eeeeee; */
+    box-shadow: 0 0 4px 0.4px #a5a5a5;
+}
+.aContainer{
+    display:flex;
+    position:absolute;
+    /* background:red; */
+    text-decoration: none;
+    width:4rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius:50%;
+    transition: 0.2s background-color;    
+}
+.aContainer:hover{
+    border-radius:50%;
+    background:black;
+    opacity: 0.5;
+}
+.lArrowCont{
+    top: 35vh;
+    left: 1vw;
+}
+.leftArrow{
+    display:inline-block;
+    font-size: 2.5rem;
+    color:white;
+}
+.rArrowCont{
+    top: 35vh;
+    right: 1vw;
+}
+.rightArrow{
+    display:inline-block;
+    font-size: 2.5rem;
+    color:white;
+}
+.ssButtons{
+    width:13vw;
+    position:absolute;
+    bottom: 4vh;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.ssButtons a{
+    display: inline-block;
+    text-decoration:none;
+    width:0.4rem;
+    height:0.4rem;
+    margin:1rem;
+    background: #ffffff;
+    border:1px solid #ffffff;
+    border-radius:50%;    
+    box-shadow:0 0 1px 0.5px #ffffff;
+    opacity: 0.7;
+    transition: 0.2s background-color;
+}
+
+.ssButtons a:hover{
+    background: black;
+    border:1px solid black;
+    box-shadow:0 0 1px 0.5px black;
+    opacity: 0.5
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .test{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation-name: ro;
+    animation-duration: 1s;
+}
+
+@keyframes ro{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+} */
+
+

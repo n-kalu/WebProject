@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="Styles.css">
-    <script src="Functions.js"></script>
+    <script src="./Functions.js" defer></script>
 
     <!-- ATTRIBUTE AUTHORS OF FREE DOWNLOADED CONTENT -->
     <a href="https://www.flaticon.com/free-icons/search" title="search icons" class="downloaded">Search icons created by Catalin Fertu - Flaticon</a>
-    <!-- ************************************************************************************************************************************************** -->
+    <!-- ********************************************************************************************************************************* -->
 </head>
 <body>
     <section class="header">
         <div class="logo">
-            <a href=""><img src="Assets/Images/logo.png" alt="XYR Inc. Logo"></a>
+            <div class="subLogo">
+                <a href=""><img src="./Assets/Images/Logo/logo.png" alt="XYR Inc. Logo" onclick="logoclick()"></a>
+                <a href="" ><img src="./Assets/Images/Logo/logoHover.png" alt="XYR Inc. Logo" class="logoHoverImg"></a>
+            </div>
         </div>
         <nav class="menu">
             <ul>
@@ -36,10 +39,33 @@
         </div>
        
     </section>
+
+
+    <article class="slideShow">
+        <div class="ssGroup">
+            <!-- <div class="ssImgContent imgCon1"><img src="./Assets/Images/Slideshow/soldering.jpg" alt="soldering"></div> -->
+            <div class="ssImgContent imgCon2"><img src="./Assets/Images/Slideshow/coding.jpg" alt="coding"></div>
+            <!-- <div class="ssImgContent imgCon3"><img src="./Assets/Images/Slideshow/solar.jpg" alt="solar"></div> -->
+            <!-- <div class="ssImgContent imgCon4"><img src="./Assets/Images/Slideshow/analysis.jpg" alt="analysis"></div> -->
+            <!-- <div class="ssImgContent imgCon5"><img src="./Assets/Images/Slideshow/board.jpg" alt="board"></div> -->
+        </div>
+        
+        <a href="" class="aContainer lArrowCont"><span class="leftArrow">&#10094;</span></a>
+        <a href="" class="aContainer rArrowCont"><span class="rightArrow">&#10095;</span></a>
+
+        <div class="ssButtons">
+            <a href=""></a><a href=""></a><a href=""></a><a href=""></a><a href=""></a>
+        </div>
+               
+    </article>
+
+
     <section class="body">
-    
+    <div ></div>
+    </section>
+    <section class="footer">
+        <!-- <button id="testing">Click Me</button> -->
 
     </section>
-    <section class="footer"></section>
 </body>
 </html>
