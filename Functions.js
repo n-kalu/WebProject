@@ -1,67 +1,69 @@
-// Global Variables
-var sshow = document.getElementsByClassName("ssImgContent");
-var ssTracker = 0;
+//Declare Main Variables
+const ssGroupImgs = document.querySelector(".slideShow");
+const ssGroup = document.querySelector(".ssGroupImgs");
+const imgList = document.querySelectorAll(".ssGroupImgs img");
+let picLenght = document.querySelector(".ssGroupImgs img").getBoundingClientRect().width;
+let ssImgTracker = 1;
 
-// Initialize Slideshow.
-for(let i = 0; i<sshow.length; i++){
-    if(i == 0){
-    }
-    else{
-        sshow[i].classList.add("hideit");
-    } 
+//Given that the slideshow images are position absolute in CSS, place the images next to each other horizontally.
+for(let i = 0; i < imgList.length; i++){
+    imgList[i].style = "left:"+(picLenght * i)+"px;";
 }
 
-//Change current slideshow picture using right arrow.
-function rightArrow(){
-    if(ssTracker >= 5){
-        sshow[ssTracker].classList.add("hideit");
-        ssTracker = 0;
-        sshow[ssTracker].classList.remove("hideit");
+//Show only first image or selected image. Hide the rest.
+ssGroupImgs.style.overflow = "hidden";
+
+//Track window resize
+window.addEventListener("resize", resize);
+function resize(){
+    //Given that Slideshow Images position is set to Absolute in CSS, place the individual images side by side on the horizontal axis.
+    for(let i = 0; i < imgList.length; i++){
+        picLenght = document.querySelector(".ssGroupImgs img").getBoundingClientRect().width;
+        imgList[i].style = "left:"+(picLenght * i)+"px; ";
     }
-    else{
-        for(let i = 0; i<sshow.length; i++){
-            if(i == ssTracker){
-                sshow[i].classList.add("hideit");
-                ssTracker += 1;
-                break;
-            }
-        }
-    }
-    sshow[ssTracker].classList.remove("hideit");
+
+    //Ensure that only the selected image is visible on the screen  after resize by doing a translateX. Also disable Transition.
+    ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";
+    ssGroup.style.transition = "none";
 }
 
-//Change current slideshow picture using left arrow.
+//Select new image using left arrow.
 function leftArrow(){
-    if(ssTracker <= 0){
-        sshow[ssTracker].classList.add("hideit");
-        ssTracker = 5;
-        sshow[ssTracker].classList.remove("hideit");
-    }
-    else{
-        for(let i = 0; i<sshow.length; i++){
-            if(i == ssTracker){
-                sshow[i].classList.add("hideit");
-                ssTracker -= 1;
-                break;
-            }
-        }
-    }
-    sshow[ssTracker].classList.remove("hideit"); 
+    if(ssImgTracker<=0){return;}
+    ssGroup.style.transition = "transform 0.2s ease-in-out";
+    ssImgTracker -= 1;
+    ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";    
+}
+
+// Select new image using right arrow.
+function rightArrow(){
+    if(ssImgTracker>=imgList.length - 1){return;}
+    ssGroup.style.transition = "transform 0.2s ease-in-out";
+    ssImgTracker += 1;
+    ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";
 }
 
 
 
 
 
-//Testing
-let but = document.getElementById("testing");
-
-but.addEventListener("click", myfunction);
-
-function myfunction(){
-    alert("hello my people");
-}
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
