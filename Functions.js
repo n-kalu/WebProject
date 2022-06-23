@@ -1,3 +1,6 @@
+//********************************IMAGE SLIDER CODES*****************************************/
+
+
 //Declare Main Variables
 const ssGroupImgs = document.querySelector(".slideShow");
 const ssGroup = document.querySelector(".ssGroupImgs");
@@ -10,8 +13,45 @@ for(let i = 0; i < imgList.length; i++){
     imgList[i].style = "left:"+(picLenght * i)+"px;";
 }
 
-//Show only first image or selected image. Hide the rest.
+// Make the second image the one displayed on page load.
+ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";
+
+//Hide Overflow
 ssGroupImgs.style.overflow = "hidden";
+
+//Select new image using left arrow.
+function leftArrow(){
+    if(ssImgTracker<=0){return;}
+    ssGroup.style.transition = "transform 0.2s ease-in-out";
+    ssImgTracker -= 1;
+    ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";  
+   
+}
+
+// Select new image using right arrow.
+function rightArrow(){
+    if(ssImgTracker>=ssGroupImgs.length - 1){return;}
+    ssGroup.style.transition = "transform 0.2s ease-in-out";
+    ssImgTracker += 1;
+    ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";
+   
+}
+
+// Listen to the end of each transition and check the id of the image displayed. If it matches the id of a copy of the first or last image, then use translateX to go back to the orignal image. Note that transition is turned off here to make the switch seamless.
+ssGroup.addEventListener("transitionend", endOfTransition);
+    function endOfTransition(){
+    if(imgList[ssImgTracker].id == "firstImg"){
+            ssGroup.style.transition = "none";
+            ssImgTracker = imgList.length - 2;
+            ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px"
+    }
+
+    if(imgList[ssImgTracker].id == "lastImg"){
+        ssGroup.style.transition = "none";
+        ssImgTracker = imgList.length - ssImgTracker;
+        ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";
+    }
+}
 
 //Track window resize
 window.addEventListener("resize", resize);
@@ -27,41 +67,7 @@ function resize(){
     ssGroup.style.transition = "none";
 }
 
-//Select new image using left arrow.
-function leftArrow(){
-    if(ssImgTracker<=0){return;}
-    ssGroup.style.transition = "transform 0.2s ease-in-out";
-    ssImgTracker -= 1;
-    ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";    
-}
-
-// Select new image using right arrow.
-function rightArrow(){
-    if(ssImgTracker>=imgList.length - 1){return;}
-    ssGroup.style.transition = "transform 0.2s ease-in-out";
-    ssImgTracker += 1;
-    ssGroup.style.transform = "translateX(" + (-picLenght * ssImgTracker)+"px";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//**************************************************************************************************/
 
 
 
