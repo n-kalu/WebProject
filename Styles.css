@@ -52,7 +52,6 @@ body{
 
 /* General Header Styles */
 .header{
-    /* background:yellow; */
     display: flex;
     flex-direction: row;
     justify-content:flex-end;
@@ -100,7 +99,6 @@ body{
 
 /* Menu Styles */
 .menu{
-   /* background:lightgreen; */
    margin-right: 3vw;
    flex-grow: 0.5;
   
@@ -115,7 +113,6 @@ body{
     width: 55rem;
     height: 50px; 
     align-items: center;
-    /* background:red; */
 }
 .menu ul li a{
     text-decoration: none;
@@ -139,7 +136,6 @@ body{
 
 /* Search Box Styles */
 .searchbox{  
-    /* background:brown; */
     border: 1.9px solid #cccccc;
     box-shadow: 0 0 4px 0.4px #cccccc;
     border-radius: 0.5rem;
@@ -254,7 +250,8 @@ body{
     right:0;
     margin:0 auto;
 }
-.ssButtons span{
+.ssButtons a{
+    text-decoration: none;
     display: inline-block;
     cursor:pointer;
     width:0.4rem;
@@ -264,14 +261,17 @@ body{
     border:1px solid #ffffff;
     border-radius:50%;    
     box-shadow:0 0 1px 0.5px #ffffff;
-    opacity: 0.7;
     transition: background-color 0.2s;
 }
-.ssButtons span:hover{
-    background: black;
-    border:1px solid black;
-    box-shadow:0 0 1px 0.5px black;
-    opacity: 0.5
+.ssButtons a:hover{
+    background: #EBB621;
+    border:1px solid #EBB621;
+    box-shadow:0 0 1px 0.5px #EBB621;
+}
+a.ssbSelected{
+   background: #EBB621;
+   border-color:#EBB621;
+   box-shadow:0 0 1px 0.5px #EBB621;
 }
 
 
